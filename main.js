@@ -112,12 +112,7 @@ function post(serviceNowTable, callback) {
   let callbackData = null;
   let callbackError = null;
 
-  // Construct API call to send to ServiceNow.
-  // The request constructor has an options parameter
-  // that holds the HTTP request method, credentials, and the API's URL.
-  // Some properties are hardcoded, like the method and part of the URI.
-  // Some properties are read from global const options.
-  // Some properties are passed into function POST() through parameters.
+  // Construct API call to send to ServiceNow
   const requestOptions = {
     method: 'POST',
     auth: {
@@ -128,10 +123,7 @@ function post(serviceNowTable, callback) {
     uri: `/api/now/table/${serviceNowTable}`,
   };
 
-  // Send Request to ServiceNow.
-  // We are passing variable requestOptions for the first argument.
-  // We are passing an anonymous function, an error-first callback,
-  // for the second argument.
+  // Send Request to ServiceNow
   request(requestOptions, (error, response, body) => {
     /**
      * Process ServiceNow error, response and body.
